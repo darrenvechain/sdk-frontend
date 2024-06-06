@@ -2,6 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { addressUtils, secp256k1 } from '@vechain/sdk-core'
+
+const pk = secp256k1.generatePrivateKey()
+console.log(addressUtils.fromPrivateKey(pk))
 
 function App() {
   const [count, setCount] = useState(0)
